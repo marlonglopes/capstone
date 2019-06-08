@@ -16,7 +16,17 @@ role :app, "18.236.85.237"                          # This may be the same as yo
 set :deploy_to, 'src'
 set :scm, :git
 set :user, "ubuntu"
-ssh_options[:keys] = %w(~/.ssh/marlon.pem)
+set :use_sudo, false
+
+set :ssh_options, {:forward_agent => true, :verify_host_key => :never, keys: ['~/.ssh/marlon.pem']}
+
+# ssh_options[:keys] = %w(~/.ssh/marlon.pem)
+# ssh_options[:forward_agent] = true
+# default_run_options[:pty] = true
+
+# set :deploy_via, :remote_cache
+
+
 # if you want to clean up old releases on each deploy uncomment this:
 # after "deploy:restart", "deploy:cleanup"
 
