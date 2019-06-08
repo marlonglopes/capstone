@@ -17,6 +17,7 @@ role :app, "54.186.15.76"                          # This may be the same as you
 set :deploy_to, 'app'
 set :scm, :git
 set :user, "ubuntu"
+set :keep_releases, 3
 set :use_sudo, false
 
 set :ssh_options, {:forward_agent => true, :verify_host_key => :never, keys: ['~/.ssh/marlon.pem']}
