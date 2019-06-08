@@ -8,14 +8,8 @@ set :deploy_via, :remote_cache                        # fetches from local git r
 set :stages, ["dev"]
 set :default_stage, "dev"
 
-role :web, "34.211.82.57"                          # Your HTTP server, Apache/etc
-role :app, "34.211.82.57"                          # This may be the same as your `Web` server
-
 set :deploy_to, "/app/#{application}"
-# set :current_path, "/app/#{application}/current"
-# set :latest_release, "latest_release"
 
-# print fetch(:current_pat)
 set :scm, :git
 set :user, "ubuntu"
 set :keep_releases, 3
